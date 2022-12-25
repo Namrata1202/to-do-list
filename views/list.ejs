@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<title> to do list </title>
+<link rel="stylesheet" href="css/styles.css">
+<html>
+<body>
+<div class="box" id="heading">
+<h1><%= kind %> </h1>
+</div>
+
+
+<div class="box">
+
+
+
+<% for(var i=0;i<newitem.length; i++){%>
+	<form action="/delete" method="post">
+<div class="item">
+<input type="checkbox" name="checkbox" value="<%= newitem[i]._id %>" onChange="this.form.submit()">
+<p><%= newitem[i].name %></p>
+
+</div>
+</form>
+<% } %>
+<form  class="item" action= "/" method="post">
+
+<input type="text" name="n3" placeholder="new item" >
+<button type="submit" name="button">+</button>
+
+</form>
+
+</div>
+
+
+
+</body>
+</html>
